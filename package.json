@@ -1,6 +1,15 @@
 {
-  "name": "context-map-controller",
+  "name": "react-context-updating-from-esri-map-controller",
   "description": "React context updating from ESRI MapController",
+  "keywords": [
+    "react",
+    "context",
+    "updating",
+    "from",
+    "esri",
+    "map",
+    "controller"
+  ],
   "version": "1.0.0",
   "private": true,
   "dependencies": {
