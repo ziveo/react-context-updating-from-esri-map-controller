@@ -1,4 +1,9 @@
-import { loadModules } from 'esri-loader';
+import { loadModules, setDefaultOptions } from 'esri-loader';
+
+setDefaultOptions({
+  version: '4.17',
+  css: true,
+});
 
 class MapController {
   constructor() {

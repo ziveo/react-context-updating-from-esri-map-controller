@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { setDefaultOptions } from 'esri-loader';
 
 import { Header } from './Header';
 import mapController from '../controller/MapController';
@@ -7,11 +6,6 @@ import mapController from '../controller/MapController';
 import AppContext from '../store/AppContext';
 
 import './App.scss';
-
-setDefaultOptions({
-  version: '4.17',
-  css: true,
-});
 
 const App = () => {
   const [coordinate, setCoordinate] = useState();
