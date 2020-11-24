@@ -9,12 +9,10 @@ class MapController {
   constructor() {
     this._map = undefined;
     this._mapView = undefined;
-    this.setCoordinate = undefined;
   }
 
   initializeMap = async (setCoordinate) => {
     try {
-      this.setCoordinate = setCoordinate;
       const [Map, MapView] = await loadModules(['esri/Map', 'esri/views/MapView']);
       this._map = new Map({
         basemap: 'gray-vector',
@@ -29,7 +27,7 @@ class MapController {
       });
 
       this._mapView.on('click', (evt) => {
-        this.setCoordinate({
+        setCoordinate({
           lat: evt.mapPoint.latitude,
           long: evt.mapPoint.longitude,
         });
