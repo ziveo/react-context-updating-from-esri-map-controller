@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className='App-header'>
-      <h1>GIS Tools - ESRI App</h1>
+      <h1>React context updated from ESRI MapController</h1>
     </header>
   );
 };
