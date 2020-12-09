@@ -6,13 +6,14 @@ import mapController from '../controller/MapController';
 import AppContext from '../store/AppContext';
 
 import './App.scss';
+import { Footer } from './Footer';
 
 const App = () => {
   const [coordinate, setCoordinate] = useState();
 
   useEffect(() => {
     mapController.initializeMap(setCoordinate).then(() => {
-      console.log('map created');
+      console.log('Map ready');
     });
   }, []);
 
@@ -21,6 +22,7 @@ const App = () => {
       <div className='App'>
         <Header />
         <main id='mapContainer' />
+        <Footer />
       </div>
     </AppContext.Provider>
   );

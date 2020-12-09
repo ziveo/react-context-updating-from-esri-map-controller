@@ -26,10 +26,14 @@ class MapController {
         zoom: 5,
       });
 
-      this._mapView.on('click', (evt) => {
-        setCoordinate({
-          lat: evt.mapPoint.latitude,
-          long: evt.mapPoint.longitude,
+      this._mapView.when(() => {
+        // After map loads, connect to listen mouse movement & drag events
+        this._mapView.on('pointer-move', (screenPoint) => {
+          const mapPoint = this._mapView.toMap({ x: screenPoint.x, y: screenPoint.y });
+          setCoordinate({
+            lat: mapPoint.latitude,
+            long: mapPoint.longitude,
+          });
         });
       });
     } catch (e) {
